@@ -22,7 +22,7 @@ class SessionsController extends Controller
 //            // 该用户存在于数据库，且邮箱和密码相符合 上面的文档，数组格式。
 //        }
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt($credentials,$request->has('remember'))) {
             session()->flash('success', '欢迎回来！！');
             return redirect()->route('users.show',[Auth::user()]);
         } else {
