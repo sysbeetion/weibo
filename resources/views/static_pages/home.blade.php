@@ -10,7 +10,7 @@
             every one , begin hear!
         </p>
         <p>
-            <a class="btn btn-lg btn-success" href="#" role="botton"> now regeiter </a>
+            <a class="btn btn-lg btn-success" href="{{ route('signup') }}" role="botton"> 现在注册 </a>
         </p>
     </div>
 @stop
