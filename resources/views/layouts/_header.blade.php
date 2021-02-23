@@ -3,7 +3,8 @@
         <a class="navbar-brand" href="/">Weibo App</a>
         <ul class="navbar-nav justify-content-end">
             {{--                我下面的内容为什么是两行的？--}}
-            <li class="nav-item"><a class="nav-link" href="/help">帮助</a></li>
+{{--            <li class="nav-item"><a class="nav-link" href="/help">帮助</a></li>--}}
+            <li class="nav-item"><a class="nav-link" href="{{ route('help') }}">帮助</a></li>
             <li class="nav-item"><a class="nav-link" href="#">登录</a> </li>
         </ul>
     </div>
