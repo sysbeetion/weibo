@@ -11,7 +11,7 @@ class UsersController extends Controller
     public function __construct()
     {
         $this->middleware('auth', [
-            'except' => ['show', 'create', 'store']
+            'except' => ['show', 'create', 'store','index']
         ]);
 
         $this->middleware('guest', [
@@ -78,5 +78,16 @@ class UsersController extends Controller
 
         return redirect()->route('users.show', $user);
     }
+
+    public function destroy(User $user)
+    {
+        //只允许已登录的 管理员 进行删除操作。
+        $this->authorize('destroy', $user);
+
+        $user->delete();
+        session()->flash('success', '成功删除用户！');
+        return back();
+    }
+
 
 }
