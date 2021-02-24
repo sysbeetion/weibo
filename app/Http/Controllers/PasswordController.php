@@ -13,6 +13,19 @@ use Carbon\Carbon;
 
 class PasswordController extends Controller
 {
+//  以上针对控制器方法 showLinkRequestForm() 做了限流，一分钟内只能允许访问两次。
+//  有点蠢 界面刷新两次就打不开了。应该是按钮限流
+    public function __construct()
+    {
+        $this->middleware('throttle:2,1', [
+            'only' => ['showLinkRequestForm']
+        ]);
+
+        $this->middleware('throttle:3,10', [
+            'only' => ['sendResetLinkEmail']
+        ]);
+    }
+
     public function showLinkRequestForm()
     {
         return view('auth.passwords.email');
