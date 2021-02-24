@@ -28,3 +28,6 @@ Route::post('login', 'SessionsController@store')->name('login');
 Route::delete('logout', 'SessionsController@destroy')->name('logout');
 
 Route::resource('users', 'UsersController'); //批量路由
+
+
+Route::get('signup/confirm/{token}', 'UsersController@confirmEmail')->name('confirm_email');
