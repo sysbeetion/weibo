@@ -17,7 +17,7 @@ class CreateStatusesTable extends Migration
             $table->increments('id');
             $table->text('content');
             $table->integer('user_id')->index();
-            $table->index(['created_ad']);
+            $table->index(['created_at']);//直接在这里加索引？
             $table->timestamps();
         });
     }

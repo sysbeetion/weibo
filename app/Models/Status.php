@@ -13,8 +13,5 @@ class Status extends Model
         return $this->belongsTo(User::class);//这算什么
     }
 
-    public function statuses(){
-        return $this->hasMany(Status::class);//这算什么
-    }
 
 }
