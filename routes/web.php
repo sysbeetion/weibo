@@ -29,6 +29,9 @@ Route::delete('logout', 'SessionsController@destroy')->name('logout');
 
 Route::resource('users', 'UsersController'); //批量路由
 
+//用上面的批量路由可以吗？
+Route::get('/users/{user}/followings', 'UsersController@followings')->name('users.followings');
+Route::get('/users/{user}/followers', 'UsersController@followers')->name('users.followers');
 
 
 Route::get('signup/confirm/{token}', 'UsersController@confirmEmail')->name('confirm_email');
