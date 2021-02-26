@@ -33,6 +33,9 @@ Route::resource('users', 'UsersController'); //批量路由
 Route::get('/users/{user}/followings', 'UsersController@followings')->name('users.followings');
 Route::get('/users/{user}/followers', 'UsersController@followers')->name('users.followers');
 
+Route::post('/users/followers/{user}', 'FollowersController@store')->name('followers.store');
+Route::delete('/users/followers/{user}', 'FollowersController@destroy')->name('followers.destroy');
+
 
 Route::get('signup/confirm/{token}', 'UsersController@confirmEmail')->name('confirm_email');
 
@@ -48,3 +51,4 @@ Route::post('password/reset',  'PasswordController@reset')->name('password.updat
 
 
 Route::resource('statuses', 'StatusesController', ['only' => ['store', 'destroy']]);
+
