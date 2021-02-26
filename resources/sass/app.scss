@@ -79,3 +79,34 @@ section.user_info {
         max-width: 100px;
     }
 }
+
+
+
+//.stat 为啥这里要用复数形式？
+.stats {
+    overflow: atuo;
+    margin-top: 0;
+    padding: 0;
+
+    a{
+        float: left;
+        padding: 0 10px;
+        text-align: center;
+        width: 33%;
+        border-left: 1px solid #eee;
+        &:first-child {
+            padding-left: 0;
+            border: 0;
+        }
+        &:hover {
+            text-decoration: none;
+            color: #337ab7;
+        }
+    }
+
+    strong {
+        display: block;
+        font-size: 1.2em;
+        color: black;
+    }
+}
