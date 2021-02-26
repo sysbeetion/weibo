@@ -30,6 +30,7 @@ Route::delete('logout', 'SessionsController@destroy')->name('logout');
 Route::resource('users', 'UsersController'); //批量路由
 
 
+
 Route::get('signup/confirm/{token}', 'UsersController@confirmEmail')->name('confirm_email');
 
 //showLinkRequestForm —— 填写 Email 的表单
@@ -41,3 +42,6 @@ Route::post('password/email',  'PasswordController@sendResetLinkEmail')->name('p
 
 Route::get('password/reset/{token}',  'PasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset',  'PasswordController@reset')->name('password.update');
+
+
+Route::resource('statuses', 'StatusesController', ['only' => ['store', 'destroy']]);
