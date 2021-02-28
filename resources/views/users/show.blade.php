@@ -22,6 +22,7 @@
             <section class="status">
                 @if($statuses->count() > 0)
                     <ul class="list-unstyled">
+
                         @foreach($statuses as $status)
                             @include('statuses._status')
                         @endforeach

@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-log navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand" href="{{ route('home') }}">Weibo App</a>
-        <ul class="navbar-nav justify-content-end">
+        <ul class="nav nav-pills nav-stacked">
             @if (Auth::check())
                 <li class="nav-item"><a class="nav-link" href="{{ route('users.index') }}">用户列表</a></li>
 
